@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>00:00:00:000</p>
+    <button onclick="watch()">Start</button>
+    <button>Stop</button>
+    <button onclick="aaa()">Reset</button>
+    <script>
+      var millisec = 0;
+      var sec = 0;
+      var min = 0;
+      var hour = 0;
+      function watch() {
+        millisec++;
+
+        if (millisec == 100) {
+          millisec = 0;
+          sec++;
+        }
+        if (sec == 60) {
+          sec = 0;
+          min++;
+        }
+        if (min == 60) {
+          min = 0;
+          hour++;
+        }
+        if (hour == 24) {
+          hour = 0;
+        }
+
+        document.getElementsByTagName("p")[0].innerHTML =
+          hour + ":" + min + ":" + sec + ":" + millisec;
+      }
+      let but = document.getElementsByTagName("button");
+      but[0].addEventListener("click", function () {
+        w = setInterval(watch, 1);
+      });
+
+      but[1].addEventListener("click", function () {
+        clearInterval(w);
+      });
+      function aaa() {
+        document.getElementsByTagName("p")[0].innerHTML = "00:00:00:000";
+      }
+    </script>
+  </body>
+</html>

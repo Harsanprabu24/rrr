@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center; background-color: lightblue">
+      Rupee to Dollar Converter
+    </h1>
+    <!-- <label for="dol" style="margin-left: 40px"
+      ></label
+    >  -->
+
+    <input type="number" id="id" placeholder="Enter amount in rupee" />
+    <button onclick="convert()">Calculate</button><br /><br />
+
+    <!-- <!-- <label for="rup" style="margin-left: 40px"
+      >Enter the amount in rupee:</label
+    > -->
+    <!-- <input type="number" id="rup" style="background-color: lightblue" /> -->
+    <p></p>
+
+    <script>
+      function convert() {
+        const dol = 0.012;
+        var rup = document.getElementById("id").value;
+        var cal = dol * rup;
+        document.getElementsByTagName("p")[0].innerHTML = cal + "dollar/s";
+      }
+    </script>
+  </body>
+</html>

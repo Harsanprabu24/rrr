@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="one">
+      <!-- <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="enter your name" /><br /><br />
+      <label for="num">Account number:</label>
+      <input type="text" id="num" placeholder="enter acc number" /> -->
+      <p>Balance=Rs.2000</p>
+      <label for="dep">Enter the deposited amount:</label>
+      <input type="number" id="a1" /><br /><br />
+
+      <button onclick="deposit()">After deposite<br />calculate</button
+      ><br /><br />
+      <p></p>
+      <label for="wit">Enter the withdrawal amount:</label>
+      <input type="number" id="a2" " /><br /><br />
+
+      <button onclick="withdraw()">After withdraw<br />calculate</button>
+      <p></p>
+    </div>
+    <script>
+      function deposit() {
+        var bal = 2000;
+
+        var deposit = document.getElementById("a1").value;
+        var cal = parseInt(bal) + parseInt(deposit);
+        document.getElementsByTagName("p")[1].innerHTML =
+          "Available balance = Rs. " + cal;
+      }
+
+      function withdraw() {
+        var bal = 2000;
+
+        var withdraw = document.getElementById("a2").value;
+        var calculate = parseInt(bal) - parseInt(withdraw);
+        document.getElementsByTagName("p")[2].innerHTML =
+          "Available balance = Rs. " + calculate;
+      }
+    </script>
+  </body>
+</html>
